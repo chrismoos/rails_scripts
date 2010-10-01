@@ -20,8 +20,10 @@ PID_NAME="myrailsapp"
 RAILS_ENV="production"
 LISTEN_PORT=5000
 THIN_NUM_SERVERS=3
+USER="www-data"
+GROUP="www-data"
 
-THIN_OPTS="-e $RAILS_ENV -p $LISTEN_PORT -P $PID_LOCATION/$PID_NAME.pid -s $THIN_NUM_SERVERS"
+THIN_OPTS="-e $RAILS_ENV -p $LISTEN_PORT -P $PID_LOCATION/$PID_NAME.pid -s $THIN_NUM_SERVERS -u $USER -g $GROUP"
 THIN="/usr/bin/thin"
 
 usage() {
